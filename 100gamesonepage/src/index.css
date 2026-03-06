@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-purple: #9d00ff;
+  --color-cyber-black: #050505;
+  --color-cyber-gray: #121212;
+  
+  --animate-shimmer: shimmer 2s infinite linear;
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-cyber-black text-white selection:bg-electric-purple selection:text-white;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #121212 25%, #1a1a1a 50%, #121212 75%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
